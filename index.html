@@ -1,109 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonjour Français</title>
-    <link rel="stylesheet" href="style.css">
+    <title>فرنسيتي - منصة تعلم اللغات الفرنسية من الصفر</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<header>
-    <div class="logo">
-        <span>🇫🇷</span>
-        Bonjour Français
-    </div>
-
-    <div class="level">
-        السنة الرابعة ابتدائي
-    </div>
-</header>
-
-<section class="hero">
-
-    <div>
-        <h1>👋 مرحباً بك في الفرنسية!</h1>
-
-        <p>
-            تعلم الفرنسية خطوة بخطوة،
-            بطريقة سهلة وممتعة من الصفر.
-        </p>
-
-        <a href="alphabet.html" class="main-button">
-            🚀 ابدأ التعلم
-        </a>
-    </div>
-
-    <div class="character">
-        👦🏻
-    </div>
-
-</section>
-
-<main>
-
-    <div class="section-title">
-        <h2>📚 دروسك</h2>
-        <p>اختر درساً وابدأ رحلة تعلم الفرنسية</p>
-    </div>
-
-    <div class="lessons">
-
-        <a href="alphabet.html" class="lesson">
-
-            <div class="lesson-icon">🔤</div>
-
-            <h3>حروف الفرنسية</h3>
-
-            <p>
-                تعلم الحروف A B C D
-                وطريقة نطقها.
-            </p>
-
-        </a>
-
-        <div class="lesson">
-            <div class="lesson-icon">🔢</div>
-            <h3>الأرقام</h3>
-            <p>تعلم الأرقام الفرنسية.</p>
+    <!-- شريط التنقل العلوي -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> فرنسيتي
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="active">Accueil — الصفحة الرئيسية</a>
+                <a href="level.html?level=0">Niveau 0 — التأسيس</a>
+                <a href="level.html?level=A1">Niveau A1</a>
+                <a href="level.html?level=A2">Niveau A2</a>
+                <a href="level.html?level=B1">Niveau B1</a>
+                <a href="level.html?level=B2">Niveau B2</a>
+                <a href="level.html?level=C1">Niveau C1</a>
+                <a href="level.html?level=C2">Niveau C2</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
+    </header>
 
-        <div class="lesson">
-            <div class="lesson-icon">👋</div>
-            <h3>التحية</h3>
-            <p>Bonjour و Salut وعبارات الترحيب.</p>
+    <!-- قسم البطل (Hero Section) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Apprenez le français à votre rythme !</h1>
+            <p class="hero-desc">تعلّم الفرنسية خطوة بخطوة، من أول حرف إلى التواصل بطلاقة.</p>
+            <a href="level.html?level=0" class="btn-primary">
+                <i class="fa-solid fa-rocket"></i> ابدأ من الصفر (Niveau 0)
+            </a>
         </div>
+    </section>
 
-        <div class="lesson">
-            <div class="lesson-icon">🎨</div>
-            <h3>الألوان</h3>
-            <p>تعلم الألوان باللغة الفرنسية.</p>
+    <!-- شبكة المستويات (Levels Grid) -->
+    <main class="container">
+        <h2 class="section-title">اختر مستواك الدراسي</h2>
+        <div class="levels-grid" id="levelsGrid">
+            <!-- سيتم توليد البطاقات ديناميكياً بواسطة JavaScript -->
         </div>
+    </main>
 
-    </div>
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <p>&copy; 2026 فرنسيتي. جميع الحقوق محفوظة. منصة تفاعلية لتعلم اللغة الفرنسية.</p>
+    </footer>
 
-    <div class="progress-box">
-
-        <div class="progress-header">
-            <span>🏆 تقدّمك</span>
-            <span>0%</span>
-        </div>
-
-        <div class="progress-bar">
-            <div class="progress"></div>
-        </div>
-
-    </div>
-
-</main>
-
-<footer>
-    🇫🇷 Bonjour Français
-    <br>
-    تعلم الفرنسية بطريقة ممتعة ❤️
-</footer>
-
+    <script src="js/levels.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
