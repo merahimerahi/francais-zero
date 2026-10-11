@@ -1,0 +1,611 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #243047;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 70px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.06);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    color: #2563eb;
+
+    text-decoration: none;
+}
+
+.logo span {
+    font-size: 28px;
+}
+
+.level,
+.lesson-number {
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    max-width: 1150px;
+
+    margin: 35px auto;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.character {
+    font-size: 110px;
+}
+
+.main-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    background: white;
+
+    color: #2563eb;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        0 20px
+        50px;
+}
+
+.section-title {
+    margin:
+        35px 0
+        20px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+.section-title p {
+    margin-top: 7px;
+    color: #718096;
+}
+
+
+/* ================= LESSONS ================= */
+
+.lessons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.lesson {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px 20px;
+
+    text-decoration: none;
+
+    color: #243047;
+
+    border: 1px solid #edf0f5;
+
+    transition: 0.25s;
+}
+
+.lesson:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.08);
+}
+
+.lesson-icon {
+
+    width: 55px;
+    height: 55px;
+
+    background: #eef4ff;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.lesson h3 {
+    margin-bottom: 8px;
+}
+
+.lesson p {
+    color: #718096;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.progress-box {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    margin-top: 30px;
+}
+
+.progress-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 12px;
+
+    font-weight: bold;
+}
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #e8edf5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress {
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.4s;
+}
+
+
+/* ================= LESSON PAGE ================= */
+
+.lesson-page {
+    max-width: 850px;
+}
+
+
+/* عنوان الدرس */
+
+.lesson-title {
+
+    text-align: center;
+
+    margin:
+        45px 0 30px;
+}
+
+.small-title {
+
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+.lesson-title h1 {
+
+    font-size: 38px;
+
+    margin: 12px 0;
+}
+
+.lesson-title p {
+
+    color: #718096;
+
+    font-size: 18px;
+}
+
+
+/* تقدم الدرس */
+
+.lesson-progress {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+}
+
+.progress-info {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+/* بطاقة الحرف */
+
+.letter-card {
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.06);
+}
+
+.big-letter {
+
+    font-size: 130px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+    line-height: 1;
+}
+
+.french-word {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin-top: 25px;
+
+    direction: ltr;
+}
+
+.arabic-word {
+
+    margin-top: 10px;
+
+    color: #718096;
+
+    font-size: 20px;
+}
+
+
+/* زر الصوت */
+
+.sound-button {
+
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.sound-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* المعلومة */
+
+.info-box {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background: #eef4ff;
+
+    border-radius: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* أزرار التنقل */
+
+.navigation {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-top: 25px;
+}
+
+.navigation button {
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #2563eb;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border:
+        1px solid #dbe4f0;
+}
+
+.navigation button:last-child {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+.navigation button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+/* ================= QUIZ ================= */
+
+.quiz {
+
+    background: white;
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+.quiz h2 {
+    margin-bottom: 15px;
+}
+
+.quiz p {
+    margin-bottom: 20px;
+}
+
+.answers {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+.answers button {
+
+    padding: 16px;
+
+    border:
+        1px solid #e1e7ef;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.answers button:hover {
+    background: #eef4ff;
+}
+
+.correct {
+
+    color: #16a34a;
+
+    font-weight: bold;
+}
+
+.wrong {
+
+    color: #dc2626;
+
+    font-weight: bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #718096;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+
+        margin: 20px;
+
+        padding: 30px 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .character {
+        font-size: 75px;
+    }
+
+    .lessons {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .lesson-title h1 {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .lessons {
+
+        grid-template-columns: 1fr;
+    }
+
+    .level {
+        display: none;
+    }
+
+    .big-letter {
+        font-size: 100px;
+    }
+
+}
+

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Les lettres - Bonjour Français</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        <span>🇫🇷</span>
+        Bonjour Français
+    </a>
+
+    <div class="lesson-number">
+        الدرس 1
+    </div>
+
+</header>
+
+
+<main class="lesson-page">
+
+    <!-- العنوان -->
+
+    <div class="lesson-title">
+
+        <span class="small-title">
+            الدرس الأول
+        </span>
+
+        <h1>🔤 Les lettres</h1>
+
+        <p>
+            حروف اللغة الفرنسية
+        </p>
+
+    </div>
+
+
+    <!-- التقدم -->
+
+    <div class="lesson-progress">
+
+        <div class="progress-info">
+
+            <span>تقدم الدرس</span>
+
+            <span id="progressText">1 / 4</span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div id="lessonProgress"
+                 class="progress"
+                 style="width:25%">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- بطاقة الحرف -->
+
+    <section class="letter-card">
+
+        <div id="letter"
+             class="big-letter">
+            A
+        </div>
+
+
+        <div id="word"
+             class="french-word">
+            avion
+        </div>
+
+
+        <div id="translation"
+             class="arabic-word">
+            طائرة ✈️
+        </div>
+
+
+        <button
+            class="sound-button"
+            onclick="playAudio('audio/alphabet/a.mp3')">
+              
+
+            🔊 استمع إلى النطق
+
+        </button>
+
+    </section>
+
+
+    <!-- معلومة -->
+
+    <div class="info-box">
+
+        💡
+        <strong>استمع جيداً!</strong>
+
+        <br>
+
+        ثم حاول أن تنطق الحرف بنفسك.
+
+    </div>
+
+
+    <!-- أزرار -->
+
+    <div class="navigation">
+
+        <button
+            id="previous"
+            onclick="previousLetter()"
+            disabled>
+
+            → السابق
+
+        </button>
+
+
+        <button
+            id="next"
+            onclick="nextLetter()">
+
+            التالي ←
+
+        </button>
+
+    </div>
+
+
+    <!-- الاختبار -->
+
+    <section
+        id="quiz"
+        class="quiz"
+        style="display:none">
+
+        <h2>🎯 اختبر نفسك</h2>
+
+        <p>
+            أي كلمة تبدأ بالحرف A؟
+        </p>
+
+
+        <div class="answers">
+
+            <button onclick="checkAnswer(this, true)">
+                ✈️ avion
+            </button>
+
+            <button onclick="checkAnswer(this, false)">
+                🐱 chat
+            </button>
+
+            <button onclick="checkAnswer(this, false)">
+                🏠 maison
+            </button>
+
+        </div>
+
+        <p id="result"></p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    🇫🇷 Bonjour Français
+
+</footer>
+
+
+<script>
+
+const letters = [
+
+    {
+        letter: "A",
+        word: "avion",
+        translation: "طائرة ✈️"
+    },
+
+    {
+        letter: "B",
+        word: "banane",
+        translation: "موزة 🍌"
+    },
+
+    {
+        letter: "C",
+        word: "chat",
+        translation: "قطة 🐱"
+    },
+
+    {
+        letter: "D",
+        word: "dauphin",
+        translation: "دلفين 🐬"
+    }
+
+];
+
+
+let current = 0;
+
+
+function showLetter() {
+
+    document.getElementById("letter").textContent =
+        letters[current].letter;
+
+    document.getElementById("word").textContent =
+        letters[current].word;
+
+    document.getElementById("translation").textContent =
+        letters[current].translation;
+
+
+    document.getElementById("progressText").textContent =
+        (current + 1) + " / " + letters.length;
+
+
+    let percentage =
+        ((current + 1) / letters.length) * 100;
+
+    document.getElementById("lessonProgress")
+        .style.width = percentage + "%";
+
+
+    document.getElementById("previous").disabled =
+        current === 0;
+
+
+    if (current === letters.length - 1) {
+
+        document.getElementById("next")
+            .textContent = "🏆 الاختبار";
+
+    } else {
+
+        document.getElementById("next")
+            .textContent = "التالي ←";
+
+    }
+
+}
+
+
+function nextLetter() {
+
+    if (current < letters.length - 1) {
+
+        current++;
+
+        showLetter();
+
+    } else {
+
+        document.getElementById("quiz")
+            .style.display = "block";
+
+        document.getElementById("quiz")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+}
+
+
+function previousLetter() {
+
+    if (current > 0) {
+
+        current--;
+
+        showLetter();
+
+    }
+
+}
+
+
+function speakLetter() {
+
+    let text =
+        letters[current].letter +
+        ". " +
+        letters[current].word;
+
+    let speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "fr-FR";
+
+    speech.rate = 0.8;
+
+    speech.pitch = 1;
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+function checkAnswer(button, correct) {
+
+    let result =
+        document.getElementById("result");
+
+
+    if (correct) {
+
+        result.textContent =
+            "🎉 Bravo ! إجابة صحيحة!";
+
+        result.className =
+            "correct";
+
+    } else {
+
+        result.textContent =
+            "❌ حاول مرة أخرى";
+
+        result.className =
+            "wrong";
+
+    }
+
+}
+
+</script>
+<audio id="player"></audio>
+
+<script>
+function playAudio(file) {
+    const player = document.getElementById("player");
+    player.src = file;
+    player.play();
+}
+</script>
+</body>
+
+</html>
