@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس المستويات - فرنسيتي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="level-page-body">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="navbar">
+        <div class="nav-container">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="فتح القائمة">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> فرنسيتي
+            </a>
+            <div class="level-indicator" id="topLevelTitle">Niveau 0</div>
+            <a href="index.html" class="home-link"><i class="fa-solid fa-house"></i> الرئيسية</a>
+        </div>
+    </header>
+
+    <!-- تخطيط الصفحة الرئيسي (السايدبار والمحتوى) -->
+    <div class="platform-layout">
+        
+        <!-- غطاء خلفي للجوال -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        <!-- الشريط الجانبي للدروس (Sidebar) -->
+        <aside class="lesson-sidebar" id="lessonSidebar">
+            <div class="sidebar-header">
+                <h3 id="sidebarLevelTitle">محتوى المستويات</h3>
+                <button class="close-sidebar" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="sidebar-search">
+                <input type="text" id="lessonSearch" placeholder="ابحث عن درس أو حصة...">
+            </div>
+            <div class="sidebar-progress-container">
+                <div class="progress-bar-label">
+                    <span>نسبة إنجاز المستوى</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <div class="sidebar-nav-list" id="sidebarNavList">
+                <!-- يتم توليد الدروس والحصص ديناميكياً -->
+            </div>
+        </aside>
+
+        <!-- منطقة المحتوى الرئيسي للدرس -->
+        <main class="lesson-content-area" id="lessonContentArea">
+            <!-- يتم تعبئة محتوى الحصة أو الاستقبال ديناميكياً -->
+        </main>
+
+    </div>
+
+    <script src="js/levels.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/level-page.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
